@@ -1,0 +1,145 @@
+.skills-main {
+  width: 100%;
+  height: 102vh;
+  display: flex;
+}
+.skills {
+  width: 60%;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skills-cursive p {
+  font-family: var(--cursive);
+  color: var(--html);
+  font-size: 1.3em;
+}
+.skills-title {
+  padding-left: 55px;
+  width: 100%;
+  animation: skills-h1 2s linear forwards;
+}
+.skills-title span {
+  font-size: 4em;
+  font-family: var(--heading);
+  color: var(--green);
+}
+
+.skills-p {
+  width: 100%;
+  text-align: justify;
+  padding-left: 55px;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.skill-contact {
+  color: var(--green);
+  letter-spacing: 1px;
+  transition: all 150ms linear;
+  cursor: pointer;
+}
+.skill-contact:hover {
+  opacity: 0.7;
+}
+.skills-bar {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  padding: 0px 80px;
+}
+.skills-bar h2 {
+  font-weight: bolder;
+  font-family: var(--heading);
+  font-size: 1em;
+}
+
+.progress-bar {
+  background: var(--html);
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+}
+.progress-bar .frontend-html {
+  height: 2px;
+  border-radius: 4px;
+  width: 0%;
+  background: var(--green);
+  animation: bar 1.5s linear forwards;
+}
+@keyframes bar {
+  100% {
+    width: 60%;
+  }
+}
+.progress-bar .backend {
+  height: 2px;
+  border-radius: 4px;
+  width: 0%;
+  background: var(--red);
+  animation: bar1 1.5s linear forwards;
+}
+@keyframes bar1 {
+  100% {
+    width: 18%;
+  }
+}
+.progress-bar .react {
+  height: 2px;
+  border-radius: 4px;
+  width: 0%;
+  background: var(--react);
+  animation: bar2 1.5s linear forwards;
+}
+@keyframes bar2 {
+  100% {
+    width: 40%;
+  }
+}
+.progress-bar .mongo {
+  height: 2px;
+  border-radius: 4px;
+  width: 0%;
+  background: var(--green);
+  animation: bar3 1.5s linear forwards;
+}
+@keyframes bar3 {
+  100% {
+    width: 18%;
+  }
+}
+
+/* for laptop */
+@media only screen and (max-width: 992px) {
+  .skills-bar {
+    padding: 0px 0px 0px 10px;
+  }
+  .skills-title span {
+    font-size: 2em;
+  }
+  .skills-p {
+    font-size: 0.9em;
+  }
+}
+/* for Tablet */
+@media only screen and (max-width: 768px) {
+  .skills-main {
+    flex-direction: column;
+  }
+  .skills {
+    width: 100%;
+    padding: 10px 20px 10px 10px;
+  }
+  .skills-bar {
+    width: 100%;
+    padding: 30px;
+  }
+  .skills-p {
+    font-size: 0.8em;
+  }
+}

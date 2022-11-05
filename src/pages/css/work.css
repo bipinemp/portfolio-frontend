@@ -1,0 +1,147 @@
+.work-main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.work {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.notify {
+  position: fixed;
+  right: 20px;
+  top: -100px;
+  z-index: 1000;
+  background-color: var(--black);
+  color: white;
+  padding: 10px 25px;
+  border: 2px solid var(--green);
+  letter-spacing: 1px;
+  animation: noti 0.5s ease-in-out forwards 2s;
+  z-index: 6000;
+  box-shadow: 0px 0px 2px 1px white;
+}
+@keyframes noti {
+  100% {
+    top: 40px;
+  }
+}
+.work div {
+  position: relative;
+  width: 25%;
+  height: 347.5px;
+  transition: all 400ms linear;
+  overflow: hidden;
+  transform: scale(0);
+  animation: image-scale 1s ease forwards;
+}
+@keyframes image-scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border: 1px solid var(--html); */
+  cursor: pointer;
+  transition: all 300ms ease;
+  filter: brightness(60%);
+}
+
+.work div:hover img {
+  transform: scale(1.3);
+  filter: brightness(110%);
+}
+
+.code {
+  position: absolute;
+  inset: 0;
+  width: 0px;
+  height: 0px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 0px;
+  margin: auto auto;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  background-color: var(--green);
+  color: var(--black);
+  font-weight: bold;
+  transition: all 400ms linear;
+}
+.work div:hover .code:not(img) {
+  display: flex;
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+}
+
+.popup {
+  position: fixed;
+  width: 70%;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--links);
+  color: var(--black);
+  overflow: scroll;
+  z-index: 1000;
+  box-shadow: 0px 0px 17px 1px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 0px 17px 1px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 17px 1px rgba(255, 255, 255, 1);
+}
+.smallpopup {
+  width: 90%;
+  height: auto;
+}
+.popup img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.popup-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: var(--red);
+  border: none;
+  color: var(--black);
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 3px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+/* For large screen */
+@media only screen and (max-width: 1200px) {
+  .work {
+    width: 100%;
+  }
+}
+/* for laptop */
+@media only screen and (max-width: 992px) {
+  .work div {
+    width: 50%;
+  }
+}
+/* exception */
+/* for laptop */
+@media only screen and (max-width: 600px) {
+  .work div {
+    width: 90%;
+    padding: 10px;
+    margin: 0px auto;
+  }
+}

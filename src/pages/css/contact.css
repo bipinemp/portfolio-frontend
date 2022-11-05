@@ -1,0 +1,247 @@
+.contact-main {
+  width: 100%;
+  height: 120vh;
+  display: flex;
+}
+.sucess {
+  position: fixed;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  top: 8%;
+  left: 50%;
+  background-color: var(--green);
+  color: var(--black);
+  padding: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  animation: pop 2s linear forwards;
+}
+@keyframes pop {
+  100% {
+    visibility: hidden;
+  }
+}
+.contactt {
+  width: 45%;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -40px;
+}
+
+.contact-cursive p {
+  font-family: var(--cursive);
+  color: var(--html);
+  font-size: 1.3em;
+}
+.contact-p {
+  position: relative;
+  width: 100%;
+  padding-left: 55px;
+  font-weight: bold;
+}
+
+.contact-p p {
+  letter-spacing: 2px;
+}
+.contact-title {
+  width: 100%;
+  padding-left: 55px;
+}
+.contact-title span {
+  font-size: 3em;
+  font-family: var(--heading);
+  color: var(--green);
+}
+
+.contactt form {
+  position: relative;
+  padding-left: 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin: 10px 0px;
+}
+
+.contactt form input {
+  width: 90%;
+  min-height: 6vh;
+  background-color: var(--input);
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  letter-spacing: 2px;
+}
+.contact-inp {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.underline {
+  position: absolute;
+  bottom: 10px;
+  width: 0%;
+  height: 2px;
+  background: var(--green);
+  transition: all 250ms ease;
+}
+/* .not-underline {
+  position: absolute;
+  bottom: 25px;
+  width: 0%;
+  height: 2px;
+  background: var(--green);
+  transition: all 250ms ease;
+} */
+.contact-form input:focus ~ .underline {
+  width: 90%;
+}
+.contact-form .error {
+  margin-top: 10px;
+  color: var(--green);
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 0.7em;
+}
+
+textarea {
+  position: relative;
+  width: 90%;
+  background-color: var(--input);
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  letter-spacing: 2px;
+}
+textarea::placeholder {
+  letter-spacing: 1px;
+  color: var(--p);
+}
+.contact-textarea-underline {
+  position: absolute;
+  bottom: 25px;
+  width: 0%;
+  height: 2px;
+  background: var(--green);
+  transition: all 250ms ease;
+}
+.contact-form textarea:focus ~ .underline {
+  width: 90%;
+}
+form input::placeholder {
+  color: var(--p);
+  letter-spacing: 1px;
+}
+.contactt button {
+  width: 90%;
+  position: relative;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 10px 60px;
+  font-size: 1.2em;
+  letter-spacing: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  background: none;
+  z-index: 1;
+}
+.contactt button:hover,
+.contactt button:focus {
+  color: var(--black);
+}
+.contactt button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--green);
+  transition: transform 300ms ease-in-out;
+  transform: scaleX(0);
+  color: var(--black);
+  transform-origin: left;
+}
+.contactt button:hover::before,
+.contactt button:focus::before {
+  transform: scaleX(1);
+  color: var(--black);
+}
+.contact-side {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+  font-size: 0.8em;
+}
+.contact-side div:not(.fiverr-div) {
+  width: 70%;
+  margin: 0px auto;
+  padding: 20px;
+  background-color: var(--input);
+  display: flex;
+  gap: 1em;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transform: scale(0);
+  animation: contact-side 600ms ease-in-out forwards;
+}
+.fiverr-div {
+  width: 70%;
+  margin: 0px auto;
+  padding: 20px;
+  background-color: var(--input);
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transform: scale(0);
+  animation: contact-side 600ms ease-in-out forwards;
+}
+@keyframes contact-side {
+  100% {
+    transform: scale(1);
+  }
+}
+.contact-icon {
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--sidebar);
+}
+
+.fiverr-div {
+  cursor: pointer;
+}
+.contact-email {
+  word-break: break-all;
+}
+/* for laptop */
+@media only screen and (max-width: 1071px) {
+  .contact-main {
+    flex-direction: column;
+  }
+  .contactt {
+    width: 100%;
+    padding: 50px 10px;
+  }
+  .contact-side {
+    width: 100%;
+  }
+  .fiverr-div {
+    margin-bottom: 20px;
+  }
+  .contact-p {
+    font-size: 0.8em;
+  }
+  .contact-title span {
+    font-size: 2em;
+  }
+  .contact-form button {
+    font-size: 0.8em;
+  }
+}
