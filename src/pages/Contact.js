@@ -29,7 +29,7 @@ const Contact = () => {
     e.preventDefault();
     setError(validate(formValues));
     axios
-      .post("/api/users", formValues)
+      .post(`${process.env.REACT_APP_SERVER_URL}/api/users`, formValues)
       .then((res) =>
         setTimeout(() => {
           setIsSubmit(true);
